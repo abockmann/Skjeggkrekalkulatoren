@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="./plotly-latest.min.js"></script>
+<script src="./fmin.min.js"></script>
+<script src="./script.js"></script>
+
+</head>
+<body>
+
+<h2>Skjeggkrekalkulatoren</h2>
+
+<p>
+Skjeggkrekalkulatoren beregner hvor mange skjeggkre du har i boligen, hvor lang tid det tar å bli kvitt dem og hvor effektive tiltakene dine er.
+Du fyller inn hvor mange skjeggkre som har gått i fellene hver uke i tabellen, og trykker på 'Beregn'.
+Antakelsene i modellen er:
+</p>
+<ul>
+<li>Du bruker limfeller og teller opp ny fangst etter hver uke</li>
+<li>Limfellene er like effektive over tid</li>
+<li>Limfellene dekker hele boligen</li>
+<li>Modellen inkluderer ikke at skjeggkreene formerer seg</li>
+</ul>
+<p>
+Sistnevnte antakelse er begrunnet med at et normalt effektivt limfelleoppsett fanger skjeggkre langt fortere enn de formerer seg.
+</p>
+<br>
+
+<div class=container>
+<table contenteditable="true" id="weekTable" style="width: 20%">
+	<colgroup>
+	   <col span="1" style="width: 50%;">
+	   <col span="1" style="width: 50%;">
+	</colgroup>
+
+	<tbody>
+	  <tr>
+		<th contenteditable="false">Uke</th>
+		<th>Antall</th>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">1</td>
+		<td>0</td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">2</td>
+		<td>0</td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">3</td>
+		<td>0</td>
+	  </tr>
+	</tbody>
+
+</table>
+
+<table class="resultTable" contenteditable="false" id="resultat" style="width: 50%">
+	<colgroup>
+	   <col span="1" style="width: 80%;">
+	   <col span="1" style="width: 20%;">
+	</colgroup>
+	
+	<tbody>
+	  <tr>
+		<td contenteditable="false">Antall skjeggkre ved starten av uke 1:</td>
+		<td id="N0_felt" contenteditable="false"></td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">Halveringstid for bestand:</td>
+		<td id="halveringstid_felt" contenteditable="false"></td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">Tid til utryddelse fra siste uke - median:</td>
+		<td id="utrydningstid_felt" contenteditable="false"></td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">Tid til utryddelse fra siste uke - 95 percentil:</td>
+		<td id="utrydningstid2_felt" contenteditable="false"></td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">Tid til utryddelse fra siste uke - 99 percentil:</td>
+		<td id="utrydningstid3_felt" contenteditable="false"></td>
+	  </tr>
+	  <tr>
+		<td contenteditable="false">Tid til utryddelse fra siste uke - 99.9 percentil:</td>
+		<td id="utrydningstid4_felt" contenteditable="false"></td>
+	  </tr>
+	</tbody>
+</table>
+
+</div>
+
+<div class="rowControl">
+<button class="tableButton" type="button" onclick="addRow()">Ny rad</button> <button class="tableButton" type="button" onclick="deleteRow()">Slett rad</button> <button class="tableButton" type="button" onclick="plotTimeHistory()">Beregn</button>
+</div>
+
+
+
+
+
+<!-- Container for plots -->
+<div id="plot" style="width:600px;height:250px;margin:0px;padding:0px;"></div>
+
+
+<footer>
+<p>©Copyright 2021 Arne Bøckmann</p>
+</footer>
+</body>
+</html>

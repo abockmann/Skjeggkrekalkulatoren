@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/quicksand-v22-latin-ext-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./fonts/quicksand-v22-latin-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/quicksand-v22-latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/quicksand-v22-latin-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/quicksand-v22-latin-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/quicksand-v22-latin-ext-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
+}
+
+* {font-family: Quicksand;}
+
+h2 {
+  color: black;
+  font-family: Quicksand;
+  font-size: 20px;
+}
+
+p {font-size: 10px;}
+
+ul {font-size: 10px;}
+
+table {
+  font-family: Quicksand;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#weekTable {
+  margin-right: 5%;
+  min-width: 150px;
+  float: left;
+}
+
+#resultTable {
+  display: inline;
+  width: 50%;
+  float: left;
+}
+
+.container {
+  display: block;
+  margin: 15px;  
+  min-width: 200px;
+}
+
+.rowControl {
+  display: block;
+  margin-left: 15px;
+  margin-top: 20px;
+  min-width: 150px;
+  width: 150px;
+  float: bottom;
+}
+
+.resultTable tbody tr {background-color: white;}
+
+#weekTable td, th {
+  text-align: left;
+  padding: 3px;
+  font-size: 10px;
+}
+
+#resultat {
+  visibility: collapse;
+  display: inline-table;
+}
+
+.resultTable td, th {
+  text-align: left;
+  padding: 3px;
+  font-size: 10px;
+}
+
+tr:nth-child(odd) {
+  background-color: #BAE2FF;
+}
+
+tr:first-child {
+  background-color: #7DC8FF;
+}
+
+
+.tableButton {
+	background:linear-gradient(to bottom, #7DC8FF 5%, #5ba4bf 100%);
+	background-color:#5ba4bf;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:'Quicksand';
+	font-size:8px;
+	padding:5px 7px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #3a859e;
+    margin-top: 20px;
+	border: none;
+}
+.tableButton:hover {
+	background:linear-gradient(to bottom, #BAE2FF 5%, #5ba4bf 100%);
+	background-color:#2b677d;
+}
+.tableButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+
+
+footer {
+  margin-top: 10px;
+  font-size: 0.7rem;
+}
+
+
+
+
